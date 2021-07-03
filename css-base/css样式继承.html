@@ -11,10 +11,27 @@
             font-family: monospace;
         }
         .pink-text {
-            color: pink;
+            color: pink !Important;
+        }
+        .blue-text {
+            color: blue;
+        }
+        #orange-text{
+            color: orange;
         }
     </style>
+    <!-- 每一个 HTML 页面都含有一个body元素,从 Body 元素继承样式 -->
     <h1>Hello World</h1>
-    <h2 class="pink-text">I Comming</h2>
-
+    <!-- Class 选择器的优先级高于继承样式 -->
+    <h1 class="blue-text">My World</h1>
+    <!-- 注意：HTML 元素里应用的 class 的先后顺序无关紧要。
+    但是，在<style>标签里面声明的class顺序十分重要。第二个声明始终优于第一个声明。
+    因为.blue-text在.pink-text的后面声明，所以.blue-text会覆盖.pink-text的样式 -->
+    <h2 class="pink-text blue-text">I Comming</h2>
+    <!-- 注意：无论在pink-textclass 的上面或者下面声明，id 选择器的优先级总是会高于 class 选择器 -->
+    <h3 id="orange-text" class="pink-text blue-text">common on, baby!</h3>
+    <!-- 内联样式的优先级高于 ID 选择器 -->
+    <h4 style="color: yellow" class="pink-text blue-text">common on, baby!</h4>
+    <!-- Important 的优先级最高 -->
+    <h5 style="color: yellow" class="pink-text blue-text">yyds</h5>
 </html>
